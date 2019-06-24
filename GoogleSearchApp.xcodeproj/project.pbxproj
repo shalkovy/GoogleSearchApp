@@ -54,14 +54,22 @@
 		D1A0DA6522C0DEED0009FEAB /* GoogleSearchApp */ = {
 			isa = PBXGroup;
 			children = (
-				D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */,
 				D1A0DA6822C0DEED0009FEAB /* ViewController.swift */,
 				D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */,
-				D1A0DA6D22C0DEEE0009FEAB /* Assets.xcassets */,
-				D1A0DA6F22C0DEEE0009FEAB /* LaunchScreen.storyboard */,
+				D1A0DA7822C0DF960009FEAB /* Supporting Files */,
 				D1A0DA7222C0DEEE0009FEAB /* Info.plist */,
 			);
 			path = GoogleSearchApp;
+			sourceTree = "<group>";
+		};
+		D1A0DA7822C0DF960009FEAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */,
+				D1A0DA6D22C0DEEE0009FEAB /* Assets.xcassets */,
+				D1A0DA6F22C0DEEE0009FEAB /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
