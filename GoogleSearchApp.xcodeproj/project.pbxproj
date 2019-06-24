@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */; };
-		D1A0DA6922C0DEED0009FEAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6822C0DEED0009FEAB /* ViewController.swift */; };
+		D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */; };
 		D1A0DA6C22C0DEED0009FEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */; };
 		D1A0DA6E22C0DEEE0009FEAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A0DA6D22C0DEEE0009FEAB /* Assets.xcassets */; };
 		D1A0DA7122C0DEEE0009FEAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A0DA6F22C0DEEE0009FEAB /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		D1A0DA6322C0DEED0009FEAB /* GoogleSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1A0DA6822C0DEED0009FEAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchViewController.swift; sourceTree = "<group>"; };
 		D1A0DA6B22C0DEED0009FEAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1A0DA6D22C0DEEE0009FEAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1A0DA7022C0DEEE0009FEAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		D1A0DA6522C0DEED0009FEAB /* GoogleSearchApp */ = {
 			isa = PBXGroup;
 			children = (
-				D1A0DA6822C0DEED0009FEAB /* ViewController.swift */,
+				D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */,
 				D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */,
 				D1A0DA7822C0DF960009FEAB /* Supporting Files */,
 				D1A0DA7222C0DEEE0009FEAB /* Info.plist */,
@@ -143,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1A0DA6922C0DEED0009FEAB /* ViewController.swift in Sources */,
+				D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */,
 				D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
