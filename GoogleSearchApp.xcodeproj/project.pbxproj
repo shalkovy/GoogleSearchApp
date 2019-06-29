@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		826BC5C90651FFD4282A5F75 /* Pods_GoogleSearchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC793CFC803DA62DF4A68ED /* Pods_GoogleSearchApp.framework */; };
+		D1334B4E22C4B8A1004C9223 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4D22C4B8A1004C9223 /* Networking.swift */; };
+		D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4F22C4E055004C9223 /* GoogleResponse.swift */; };
 		D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */; };
 		D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */; };
 		D1A0DA6C22C0DEED0009FEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */; };
@@ -15,6 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06DCF2608AB9C75B34FC261F /* Pods-GoogleSearchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleSearchApp.debug.xcconfig"; path = "Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp.debug.xcconfig"; sourceTree = "<group>"; };
+		46793559DD462036BE7EA532 /* Pods-GoogleSearchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleSearchApp.release.xcconfig"; path = "Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp.release.xcconfig"; sourceTree = "<group>"; };
+		5EC793CFC803DA62DF4A68ED /* Pods_GoogleSearchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleSearchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1334B4D22C4B8A1004C9223 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D1334B4F22C4E055004C9223 /* GoogleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleResponse.swift; sourceTree = "<group>"; };
 		D1A0DA6322C0DEED0009FEAB /* GoogleSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826BC5C90651FFD4282A5F75 /* Pods_GoogleSearchApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8409B9798DCE48671671C702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EC793CFC803DA62DF4A68ED /* Pods_GoogleSearchApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0D131E42ECF3D7953F5B9D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06DCF2608AB9C75B34FC261F /* Pods-GoogleSearchApp.debug.xcconfig */,
+				46793559DD462036BE7EA532 /* Pods-GoogleSearchApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D1A0DA5A22C0DEED0009FEAB = {
 			isa = PBXGroup;
 			children = (
 				D1A0DA6522C0DEED0009FEAB /* GoogleSearchApp */,
 				D1A0DA6422C0DEED0009FEAB /* Products */,
+				C0D131E42ECF3D7953F5B9D7 /* Pods */,
+				8409B9798DCE48671671C702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */,
+				D1334B4D22C4B8A1004C9223 /* Networking.swift */,
+				D1334B4F22C4E055004C9223 /* GoogleResponse.swift */,
 				D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */,
 				D1A0DA7822C0DF960009FEAB /* Supporting Files */,
 				D1A0DA7222C0DEEE0009FEAB /* Info.plist */,
@@ -79,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1A0DA7522C0DEEE0009FEAB /* Build configuration list for PBXNativeTarget "GoogleSearchApp" */;
 			buildPhases = (
+				D661F534147B4D0404B216DB /* [CP] Check Pods Manifest.lock */,
 				D1A0DA5F22C0DEED0009FEAB /* Sources */,
 				D1A0DA6022C0DEED0009FEAB /* Frameworks */,
 				D1A0DA6122C0DEED0009FEAB /* Resources */,
+				EBFEE48D6FAFB3972CB7081B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,13 +170,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D661F534147B4D0404B216DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleSearchApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBFEE48D6FAFB3972CB7081B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D1A0DA5F22C0DEED0009FEAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */,
+				D1334B4E22C4B8A1004C9223 /* Networking.swift in Sources */,
 				D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */,
+				D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +364,7 @@
 		};
 		D1A0DA7622C0DEEE0009FEAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06DCF2608AB9C75B34FC261F /* Pods-GoogleSearchApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +383,7 @@
 		};
 		D1A0DA7722C0DEEE0009FEAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46793559DD462036BE7EA532 /* Pods-GoogleSearchApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
