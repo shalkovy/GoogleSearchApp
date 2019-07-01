@@ -61,6 +61,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D13D0B7E22CA1BBE00DEBB97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1334B4F22C4E055004C9223 /* GoogleResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D13D0B7F22CA1BCB00DEBB97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D13D0B8022CA1BDF00DEBB97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D13D0B8122CA1BE800DEBB97 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D1334B4D22C4B8A1004C9223 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D1A0DA5A22C0DEED0009FEAB = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +114,10 @@
 		D1A0DA6522C0DEED0009FEAB /* GoogleSearchApp */ = {
 			isa = PBXGroup;
 			children = (
-				D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */,
-				D1334B4D22C4B8A1004C9223 /* Networking.swift */,
-				D1334B4F22C4E055004C9223 /* GoogleResponse.swift */,
-				D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */,
+				D13D0B7E22CA1BBE00DEBB97 /* Model */,
+				D13D0B8022CA1BDF00DEBB97 /* View */,
+				D13D0B7F22CA1BCB00DEBB97 /* Controller */,
+				D13D0B8122CA1BE800DEBB97 /* Networking */,
 				D1A0DA7822C0DF960009FEAB /* Supporting Files */,
 				D1A0DA7222C0DEEE0009FEAB /* Info.plist */,
 			);

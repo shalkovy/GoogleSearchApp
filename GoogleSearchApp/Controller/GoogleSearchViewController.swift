@@ -15,6 +15,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var items = [GoogleResponse]()
+    let networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()

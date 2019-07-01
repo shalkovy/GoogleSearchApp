@@ -13,12 +13,12 @@ import SwiftyJSON
 struct Networking {
     
     let key = "AIzaSyDBBxKBdfvPKtx_jTqiy8HxVsWDDt7ly28"
-    let customSearchEngineID = "005201719826685222043:s3meep7wm6m"
+    let id = "005201719826685222043:s3meep7wm6m"
     let url = "https://www.googleapis.com/customsearch/v1?"
     
     func makeRequest(with query: String)  -> [GoogleResponse] {
         var responses = [GoogleResponse]()
-        let parameters: [String: String] = ["key": key, "cx": customSearchEngineID, "q": query]
+        let parameters: [String: String] = ["key": key, "cx": id, "q": query]
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isSuccess {
                 let jsonFormat = JSON(response.result.value!)
