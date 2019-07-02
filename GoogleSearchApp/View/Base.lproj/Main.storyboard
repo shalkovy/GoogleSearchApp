@@ -23,13 +23,13 @@
                                 <rect key="frame" x="8" y="74" width="398" height="788"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23G-3s-KuV">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="149"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-zX-mGP">
-                                        <rect key="frame" x="0.0" y="52.5" width="398" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="157" width="398" height="149"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Google Search">
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bag-wp-rDp">
-                                        <rect key="frame" x="0.0" y="105" width="398" height="683"/>
+                                        <rect key="frame" x="0.0" y="314" width="398" height="474"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="quj-5V-Zhk" detailTextLabel="Sf4-rS-oGi" style="IBUITableViewCellStyleSubtitle" id="yk1-rr-EXU">
@@ -80,7 +80,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90405331229999997" green="0.80232825539999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D4b-09-D4v" secondAttribute="bottom" id="NN4-GI-6qo"/>
                             <constraint firstItem="D4b-09-D4v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Psg-Dm-gNB"/>
@@ -90,8 +90,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="googSearchleTextField" destination="23G-3s-KuV" id="Jur-ya-6ZO"/>
                         <outlet property="googleSearchButton" destination="PhP-zX-mGP" id="CrX-a3-CQx"/>
+                        <outlet property="googleSearchleTextField" destination="23G-3s-KuV" id="Jur-ya-6ZO"/>
                         <outlet property="tableView" destination="bag-wp-rDp" id="4Ln-qo-s74"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,7 @@ target 'GoogleSearchApp' do
 
 pod 'Alamofire', '4.8.1'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'ProgressHUD'
 
   # Pods for GoogleSearchApp
 

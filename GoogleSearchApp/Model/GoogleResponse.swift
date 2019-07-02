@@ -11,9 +11,4 @@ import Foundation
 struct GoogleResponse {
     var displayLink: String?
     var title: String?
-    
-    init(link: String, title: String) {
-        self.displayLink = link
-        self.title = title
-    }
 }

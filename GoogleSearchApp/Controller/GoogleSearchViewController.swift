@@ -7,31 +7,40 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var googSearchleTextField: UITextField!
+    @IBOutlet weak var googleSearchleTextField: UITextField!
     @IBOutlet weak var googleSearchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var items = [GoogleResponse]()
-    let networking = Networking()
+    var isSearching = false { didSet { searchPressed() }}
+    var networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        networking.delegate = self
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        guard let text = googSearchleTextField.text else { return }
-        let request = Networking()
-        items = request.makeRequest(with: text)
+        ProgressHUD.show()
+        guard let text = googleSearchleTextField.text else { return }
+        if isSearching == false {
+            networking.makeRequest(with: text)
+            search()
+        } else {
+            networking.cancel()
+            search()
+        }
+        search()
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return networking.responses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,10 +50,25 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func updateCell(cell: UITableViewCell, index: Int) {
-        guard !items.isEmpty else { return }
-        let item = items[index]
+        guard !networking.responses.isEmpty else { return }
+        let item = networking.responses[index]
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.displayLink
+    }
+    
+    func searchPressed() {
+        if isSearching == true {
+            googleSearchButton.setTitle("Stop", for: .normal)
+            googleSearchButton.backgroundColor = .red
+        } else {
+            googleSearchButton.setTitle("Google Search", for: .normal)
+            googleSearchButton.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+        }
+        googleSearchleTextField.text? = ""
+    }
+    
+    func search() {
+        isSearching = !isSearching
     }
 }
 
