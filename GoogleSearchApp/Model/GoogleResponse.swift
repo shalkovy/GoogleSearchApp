@@ -9,6 +9,6 @@
 import Foundation
 
 struct GoogleResponse {
-    var displayLink: String?
-    var title: String?
+    var displayLink: String
+    var title: String
 }

@@ -16,31 +16,19 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var isSearching = false { didSet { searchPressed() }}
-    var networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        networking.delegate = self
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        ProgressHUD.show()
-        guard let text = googleSearchleTextField.text else { return }
-        if isSearching == false {
-            networking.makeRequest(with: text)
-            search()
-        } else {
-            networking.cancel()
-            search()
-        }
-        search()
-        tableView.reloadData()
+        QueryService.shared.getData(with: googleSearchleTextField.text!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return networking.responses.count
+        return QueryService.shared.responses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,10 +38,10 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func updateCell(cell: UITableViewCell, index: Int) {
-        guard !networking.responses.isEmpty else { return }
-        let item = networking.responses[index]
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.displayLink
+//        guard !networking.responses.isEmpty else { return }
+//        let item = networking.responses[index]
+//        cell.textLabel?.text = item.title
+//        cell.detailTextLabel?.text = item.displayLink
     }
     
     func searchPressed() {

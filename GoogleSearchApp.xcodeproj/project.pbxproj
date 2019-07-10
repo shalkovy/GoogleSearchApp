@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		826BC5C90651FFD4282A5F75 /* Pods_GoogleSearchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC793CFC803DA62DF4A68ED /* Pods_GoogleSearchApp.framework */; };
-		D1334B4E22C4B8A1004C9223 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4D22C4B8A1004C9223 /* Networking.swift */; };
+		D1334B4E22C4B8A1004C9223 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4D22C4B8A1004C9223 /* QueryService.swift */; };
 		D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4F22C4E055004C9223 /* GoogleResponse.swift */; };
 		D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */; };
 		D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */; };
@@ -21,7 +21,7 @@
 		06DCF2608AB9C75B34FC261F /* Pods-GoogleSearchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleSearchApp.debug.xcconfig"; path = "Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		46793559DD462036BE7EA532 /* Pods-GoogleSearchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleSearchApp.release.xcconfig"; path = "Target Support Files/Pods-GoogleSearchApp/Pods-GoogleSearchApp.release.xcconfig"; sourceTree = "<group>"; };
 		5EC793CFC803DA62DF4A68ED /* Pods_GoogleSearchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleSearchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1334B4D22C4B8A1004C9223 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D1334B4D22C4B8A1004C9223 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		D1334B4F22C4E055004C9223 /* GoogleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleResponse.swift; sourceTree = "<group>"; };
 		D1A0DA6322C0DEED0009FEAB /* GoogleSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,12 +85,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D13D0B8122CA1BE800DEBB97 /* Networking */ = {
+		D13D0B8122CA1BE800DEBB97 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D1334B4D22C4B8A1004C9223 /* Networking.swift */,
+				D1334B4D22C4B8A1004C9223 /* QueryService.swift */,
 			);
-			path = Networking;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D1A0DA5A22C0DEED0009FEAB = {
@@ -117,7 +117,7 @@
 				D13D0B7E22CA1BBE00DEBB97 /* Model */,
 				D13D0B8022CA1BDF00DEBB97 /* View */,
 				D13D0B7F22CA1BCB00DEBB97 /* Controller */,
-				D13D0B8122CA1BE800DEBB97 /* Networking */,
+				D13D0B8122CA1BE800DEBB97 /* Services */,
 				D1A0DA7822C0DF960009FEAB /* Supporting Files */,
 				D1A0DA7222C0DEEE0009FEAB /* Info.plist */,
 			);
@@ -250,7 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */,
-				D1334B4E22C4B8A1004C9223 /* Networking.swift in Sources */,
+				D1334B4E22C4B8A1004C9223 /* QueryService.swift in Sources */,
 				D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */,
 				D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */,
 			);
