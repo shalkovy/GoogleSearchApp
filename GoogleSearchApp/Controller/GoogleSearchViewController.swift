@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import ProgressHUD
-
 class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var googleSearchleTextField: UITextField!

@@ -14,12 +14,8 @@ class QueryService {
     typealias JSONDictionary = [String: Any]
     let id = "005201719826685222043:s3meep7wm6m"
     let apiKey = "AIzaSyDBBxKBdfvPKtx_jTqiy8HxVsWDDt7ly28"
-    
-//
-//    var dataTask: URLSessionDataTask?
-//    let defaultSession = URLSession(configuration: .default)
     var errorMessage = ""
-//
+
     var responses = [GoogleResponse]()
     
     func getData(with query: String) {
