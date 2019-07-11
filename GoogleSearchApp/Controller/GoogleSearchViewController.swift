@@ -31,7 +31,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
         if !isSearching {
             QueryService.shared.getData(with: googleSearchleTextField.text!) { (responses, error) in
                 if let error = error {
-                    QueryService.shared.alert(view: self, message: error.localizedDescription)
+                    QueryService.shared.alert(view: self, message: "\(error.code)")
                 }
                 self.responsesViewModels = responses?.map({ return ResponseViewModel(response: $0) }) ?? []
                 DispatchQueue.main.async {

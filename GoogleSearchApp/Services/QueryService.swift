@@ -20,14 +20,14 @@ class QueryService {
     
     typealias JSONDictionary = [String: Any]
     
-    func getData(with query: String, completion: @escaping ([GoogleResponse]?, Error?) -> ()) {
+    func getData(with query: String, completion: @escaping ([GoogleResponse]?, NSError?) -> ()) {
         guard let requestURL = createURL(request: query) else { return }
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
         
         dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if (error != nil) {
-                completion(nil, error)
+                completion(nil, error as NSError?)
             } else if let httpResponse = response as? HTTPURLResponse,
                 let responseData = data,
                 httpResponse.statusCode == 200 {
@@ -50,9 +50,7 @@ class QueryService {
             } catch let parseError as NSError {
                 print(parseError)
             }
-            
             guard let array = response!["items"] as? [Any] else { return }
-            
             for data in array {
                 if let response = data as? JSONDictionary,
                     let title = response["title"] as? String,
@@ -65,7 +63,7 @@ class QueryService {
     }
     
     func alert(view: UIViewController, message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Connection error: " + message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { action in })
         alert.addAction(defaultAction)
         DispatchQueue.main.async(execute: {
