@@ -12,6 +12,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     
     var responsesViewModels = [ResponseViewModel]()
     var isSearching = false { didSet { searchPressed() }}
+    var alert: UIAlertController?
     
     @IBOutlet weak var activityIndicatorView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -27,11 +28,10 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        
         if !isSearching {
             QueryService.shared.getData(with: googleSearchleTextField.text!) { (responses, error) in
                 if let error = error {
-                    print("request \(error)")
+                    QueryService.shared.alert(view: self, message: error.localizedDescription)
                 }
                 self.responsesViewModels = responses?.map({ return ResponseViewModel(response: $0) }) ?? []
                 DispatchQueue.main.async {
@@ -61,7 +61,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
         cell.detailTextLabel?.text = response.link
     }
     
-    func searchPressed() {
+    private func searchPressed() {
         if isSearching == true {
             googleSearchButton.setTitle("Stop", for: .normal)
             googleSearchButton.backgroundColor = .red
@@ -76,7 +76,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
         googleSearchleTextField.text? = ""
     }
     
-    func changeSearchState() {
+    private func changeSearchState() {
         isSearching = !isSearching
     }
 }
