@@ -19,6 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00T-ah-YI9">
+                                <rect key="frame" x="0.0" y="228" width="414" height="338"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="MZG-57-eq8">
+                                        <rect key="frame" x="188.5" y="150.5" width="37" height="37"/>
+                                        <color key="color" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MZG-57-eq8" firstAttribute="centerX" secondItem="00T-ah-YI9" secondAttribute="centerX" id="f2R-8J-gDM"/>
+                                    <constraint firstItem="MZG-57-eq8" firstAttribute="centerY" secondItem="00T-ah-YI9" secondAttribute="centerY" id="mdz-Fe-A6g"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D4b-09-D4v">
                                 <rect key="frame" x="8" y="74" width="398" height="788"/>
                                 <subviews>
@@ -82,14 +95,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="00T-ah-YI9" secondAttribute="trailing" id="9X9-7D-GXH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D4b-09-D4v" secondAttribute="bottom" id="NN4-GI-6qo"/>
                             <constraint firstItem="D4b-09-D4v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Psg-Dm-gNB"/>
+                            <constraint firstItem="00T-ah-YI9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vsz-lf-DaB"/>
                             <constraint firstItem="D4b-09-D4v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aBv-8s-dC0"/>
+                            <constraint firstItem="00T-ah-YI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="184" id="jfC-bN-AnI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="00T-ah-YI9" secondAttribute="bottom" constant="296" id="mNc-vs-yY7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D4b-09-D4v" secondAttribute="trailing" constant="8" id="uKd-LU-Jp0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="MZG-57-eq8" id="KDl-7o-3iP"/>
+                        <outlet property="activityIndicatorView" destination="00T-ah-YI9" id="Nek-bp-q4B"/>
                         <outlet property="googleSearchButton" destination="PhP-zX-mGP" id="CrX-a3-CQx"/>
                         <outlet property="googleSearchleTextField" destination="23G-3s-KuV" id="Jur-ya-6ZO"/>
                         <outlet property="tableView" destination="bag-wp-rDp" id="4Ln-qo-s74"/>

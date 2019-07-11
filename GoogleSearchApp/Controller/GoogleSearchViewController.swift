@@ -7,54 +7,78 @@
 //
 
 import UIKit
-class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var responsesViewModels = [ResponseViewModel]()
+    var isSearching = false { didSet { searchPressed() }}
+    
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var googleSearchleTextField: UITextField!
     @IBOutlet weak var googleSearchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var isSearching = false { didSet { searchPressed() }}
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(activityIndicatorView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        QueryService.shared.getData(with: googleSearchleTextField.text!)
+        
+        if !isSearching {
+            QueryService.shared.getData(with: googleSearchleTextField.text!) { (responses, error) in
+                if let error = error {
+                    print("request \(error)")
+                }
+                self.responsesViewModels = responses?.map({ return ResponseViewModel(response: $0) }) ?? []
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.changeSearchState()
+                }
+            }
+        } else if isSearching {
+            QueryService.shared.stop()
+        }
+        changeSearchState()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return QueryService.shared.responses.count
+        return responsesViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
-        updateCell(cell: cell, index: indexPath.item)
+        let response = responsesViewModels[indexPath.row]
+        updateCell(cell, from: response)
         return cell
     }
     
-    func updateCell(cell: UITableViewCell, index: Int) {
-//        guard !networking.responses.isEmpty else { return }
-//        let item = networking.responses[index]
-//        cell.textLabel?.text = item.title
-//        cell.detailTextLabel?.text = item.displayLink
+    func updateCell(_ cell: UITableViewCell, from response: ResponseViewModel) {
+        cell.textLabel?.text = response.title
+        cell.detailTextLabel?.text = response.link
     }
     
     func searchPressed() {
         if isSearching == true {
             googleSearchButton.setTitle("Stop", for: .normal)
             googleSearchButton.backgroundColor = .red
+            activityIndicatorView.isHidden = false
+            activityIndicator.startAnimating()
         } else {
             googleSearchButton.setTitle("Google Search", for: .normal)
             googleSearchButton.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+            activityIndicator.stopAnimating()
+            activityIndicatorView.isHidden = true
         }
         googleSearchleTextField.text? = ""
     }
     
-    func search() {
+    func changeSearchState() {
         isSearching = !isSearching
     }
 }
+    
 

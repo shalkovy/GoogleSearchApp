@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D1334B4E22C4B8A1004C9223 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4D22C4B8A1004C9223 /* QueryService.swift */; };
 		D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1334B4F22C4E055004C9223 /* GoogleResponse.swift */; };
+		D171B39522D63F9C00B2B337 /* ResponseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171B39422D63F9C00B2B337 /* ResponseViewModel.swift */; };
 		D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */; };
 		D1A0DA6922C0DEED0009FEAB /* GoogleSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */; };
 		D1A0DA6C22C0DEED0009FEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A0DA6A22C0DEED0009FEAB /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		D1334B4D22C4B8A1004C9223 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		D1334B4F22C4E055004C9223 /* GoogleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleResponse.swift; sourceTree = "<group>"; };
+		D171B39422D63F9C00B2B337 /* ResponseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewModel.swift; sourceTree = "<group>"; };
 		D1A0DA6322C0DEED0009FEAB /* GoogleSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0DA6622C0DEED0009FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A0DA6822C0DEED0009FEAB /* GoogleSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D171B39622D63F9F00B2B337 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D171B39422D63F9C00B2B337 /* ResponseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D1A0DA5A22C0DEED0009FEAB = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		D1A0DA6522C0DEED0009FEAB /* GoogleSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				D171B39622D63F9F00B2B337 /* ViewModels */,
 				D13D0B7E22CA1BBE00DEBB97 /* Model */,
 				D13D0B8022CA1BDF00DEBB97 /* View */,
 				D13D0B7F22CA1BCB00DEBB97 /* Controller */,
@@ -193,6 +204,7 @@
 				D1334B4E22C4B8A1004C9223 /* QueryService.swift in Sources */,
 				D1A0DA6722C0DEED0009FEAB /* AppDelegate.swift in Sources */,
 				D1334B5022C4E055004C9223 /* GoogleResponse.swift in Sources */,
+				D171B39522D63F9C00B2B337 /* ResponseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
