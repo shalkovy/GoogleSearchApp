@@ -12,7 +12,6 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     
     var responsesViewModels = [ResponseViewModel]()
     var isSearching = false { didSet { searchPressed() }}
-    var alert: UIAlertController?
     
     @IBOutlet weak var activityIndicatorView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -28,6 +27,7 @@ class GoogleSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        responsesViewModels.removeAll()
         if !isSearching {
             QueryService.shared.getData(with: googleSearchleTextField.text!) { (responses, error) in
                 if let error = error {

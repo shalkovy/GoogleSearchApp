@@ -14,16 +14,15 @@ class QueryService {
     
     private let id = "005201719826685222043:s3meep7wm6m"
     private let apiKey = "AIzaSyDBBxKBdfvPKtx_jTqiy8HxVsWDDt7ly28"
+    private var url = URL(string: "https://www.googleapis.com/customsearch/v1?")
     private var responses = [GoogleResponse]()
     var dataTask: URLSessionDataTask?
     
     typealias JSONDictionary = [String: Any]
     
     func getData(with query: String, completion: @escaping ([GoogleResponse]?, Error?) -> ()) {
-        let string = "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(id)&q=\(query)"
-        let searchURL = URL(string: string)!
-        
-        var request = URLRequest(url: searchURL)
+        guard let requestURL = createURL(request: query) else { return }
+        var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
         
         dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -72,6 +71,20 @@ class QueryService {
         DispatchQueue.main.async(execute: {
             view.present(alert, animated: true)
         })
+    }
+    
+    func createURL(request: String) -> URL? {
+        guard let url = url,
+            var componentsURL = URLComponents(string: url.absoluteString) else { return nil }
+        
+        componentsURL.queryItems = [
+            URLQueryItem(name: "q", value: request),
+            URLQueryItem(name: "key", value: apiKey),
+            URLQueryItem(name: "cx", value: id)
+        ]
+        
+        guard let requestURL = componentsURL.url else { return nil }
+        return requestURL
     }
     
     func stop() {
