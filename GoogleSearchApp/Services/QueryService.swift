@@ -15,7 +15,6 @@ class QueryService {
     private let id = "005201719826685222043:s3meep7wm6m"
     private let apiKey = "AIzaSyDBBxKBdfvPKtx_jTqiy8HxVsWDDt7ly28"
     private var url = URL(string: "https://www.googleapis.com/customsearch/v1?")
-    private var responses = [GoogleResponse]()
     var dataTask: URLSessionDataTask?
     
     typealias JSONDictionary = [String: Any]
@@ -43,8 +42,6 @@ class QueryService {
         
         parseQueue.sync {
             var response: JSONDictionary?
-            self.responses.removeAll()
-            
             do {
                 response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
             } catch let parseError as NSError {
